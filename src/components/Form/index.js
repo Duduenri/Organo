@@ -1,5 +1,6 @@
 import DropDown from '../DropDown'
 import Textfield from '../Textfield'
+import './Form.css'
 
 const Form = () => {
 
