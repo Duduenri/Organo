@@ -6,7 +6,7 @@ const Textfield = (props) => {
             <label>
                 {props.label}
             </label>
-            <input placeholder={props.placeholder}/>
+            <input required={props.orbigatorio} placeholder={props.placeholder}/>
         </div>
     )
 }

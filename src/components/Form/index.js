@@ -15,14 +15,19 @@ const Form = () => {
         'Inovação e Gestão'
     ]
 
+    const saving = (evento) => {
+        evento.preventDefault() 
+        
+    }
+
     return (
         <section className='form'>
-            <form>
+            <form onSubmit={saving}>
                 <h2>Preencha os dados para criar o card do colaborador</h2>
-                <Textfield label="Nome" placeholder="Digite seu nome" />
-                <Textfield label="Cargo" placeholder="Digite seu cargo" />
+                <Textfield obrigatorio={true} label="Nome" placeholder="Digite seu nome" />
+                <Textfield obrigatorio={true} label="Cargo" placeholder="Digite seu cargo" />
                 <Textfield label="Imagem" placeholder="Digite o endereço da imagem" />
-                <DropDown label="Time" itens={times}/>
+                <DropDown obrigatorio={true} label="Time" itens={times}/>
                 <Button>
                     Criar Card
                 </Button>
