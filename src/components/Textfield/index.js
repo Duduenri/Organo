@@ -1,11 +1,9 @@
 import './Textfield.css'
 
 const Textfield = (props) => {
-    let valor = ''
 
     const aoDigitado = (evento) => {
-        valor = evento.targent.value
-        console.log(valor) 
+        props.aoAlterado(evento.target.value)
     }
 
     return(
@@ -13,7 +11,7 @@ const Textfield = (props) => {
             <label>
                 {props.label}
             </label>
-            <input value={valor} onChange={aoDigitado} required={props.orbigatorio} placeholder={props.placeholder}/>
+            <input value={props.valor} onChange={aoDigitado} required={props.orbigatorio} placeholder={props.placeholder}/>
         </div>
     )
 }
