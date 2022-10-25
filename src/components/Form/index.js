@@ -2,10 +2,18 @@ import Button from '../Button'
 import DropDown from '../DropDown'
 import Textfield from '../Textfield'
 import './Form.css'
+import { useState } from 'react'
 
 const Form = () => {
 
     const times = [
+        'Programação',
+        'Front-End',
+        'Data Science',
+        'Devops',
+        'UX e Design',
+        'Mobile',
+        'Inovação e Gestão'
     ]
 
 const [nome, setNome] = useState('')
