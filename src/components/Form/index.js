@@ -23,7 +23,12 @@ const [time, setTime] = useState('')
 
     const saving = (evento) => {
         evento.preventDefault() 
-        
+        props.aoColaboradorCadastrado({
+            nome,
+            cargo,
+            imagem,
+            time
+        })
     }
 
     return (
