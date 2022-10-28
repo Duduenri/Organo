@@ -4,7 +4,7 @@ import Textfield from '../Textfield'
 import './Form.css'
 import { useState } from 'react'
 
-const Form = () => {
+const Form = (props) => {
 
     const times = [
         'Programação',
