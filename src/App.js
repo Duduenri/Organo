@@ -55,9 +55,14 @@ function App() {
       <Banner />
       <Form times= {teams.map(team => team.name)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
 
-    {teams.map(team => <Team key={team.name} name={team.name} primaryColor={team.primaryColor} secundaryColor= {team.secundaryColor}/>)}
+    {teams.map(team => <Team  
+    key={team.name} 
+    name={team.name} 
+    primaryColor={team.primaryColor} 
+    secundaryColor= {team.secundaryColor}
+    collaborators={colaboradores}
+    />)}
 
-      <Team name="Data Science"/>
     </div>
   );
 }

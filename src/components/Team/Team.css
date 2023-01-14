@@ -9,3 +9,10 @@
     font-size: 32px;
     padding-bottom: 8px;
 }
+
+.team .collaboradors {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
