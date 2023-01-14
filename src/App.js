@@ -1,45 +1,45 @@
 import { useState } from 'react';
-import Banner from './components/Banner/Banner'
-import Form from './components/Form';
-import Team from './components/Team';
+import Banner from './componentes/Banner';
+import Formulario from './componentes/Formulario';
+import Time from './componentes/Time';
 
 function App() {
 
-  const teams = [
+  const times = [
     {
-      name: 'Programação',
-      primaryColor: '#D9F7E9',
-      secundaryColor: '#57c278'
+      nome: 'Programação',
+      corPrimaria: '#57C278',
+      corSecundaria: '#D9F7E9'
     },
     {
-      name: 'Front-End',
-      primaryColor: '#82CFFA',
-      secundaryColor: '#E8F8FF'
+      nome: 'Front-End',
+      corPrimaria: '#82CFFA',
+      corSecundaria: '#E8F8FF'
     },
     {
-      name: 'Data Science',
-      primaryColor: '#A6D157',
-      secundaryColor: '#F0F8E2'
+      nome: 'Data Science',
+      corPrimaria: '#A6D157',
+      corSecundaria: '#F0F8E2'
     },
     {
-      name: 'Devops',
-      primaryColor: '#E06B69',
-      secundaryColor: '#FDE7E8'
+      nome: 'Devops',
+      corPrimaria: '#E06B69',
+      corSecundaria: '#FDE7E8'
     },
     {
-      name: 'UX e Design',
-      primaryColor: '#DB6EBF',
-      secundaryColor: '#FAE9F5'
+      nome: 'UX e Design',
+      corPrimaria: '#DB6EBF',
+      corSecundaria: '#FAE9F5'
     },
     {
-      name: 'Mobile',
-      primaryColor: '#FFBA05',
-      secundaryColor: '#FFF5D9'
+      nome: 'Mobile',
+      corPrimaria: '#FFBA05',
+      corSecundaria: '#FFF5D9'
     },
     {
-      name: 'Inovação e Gestão',
-      primaryColor: '#FF8A29',
-      secundaryColor: '#FFEEDF'
+      nome: 'Inovação e Gestão',
+      corPrimaria: '#FF8A29',
+      corSecundaria: '#FFEEDF'
     }
   ]
 
@@ -53,15 +53,15 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Form times= {teams.map(team => team.name)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
+      <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
 
-    {teams.map(team => <Team  
-    key={team.name} 
-    name={team.name} 
-    primaryColor={team.primaryColor} 
-    secundaryColor= {team.secundaryColor}
-    collaborators={colaboradores}
-    />)}
+      {times.map(time => <Time 
+        key={time.nome} 
+        nome={time.nome} 
+        corPrimaria={time.corPrimaria} 
+        corSecundaria={time.corSecundaria} 
+        colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+      />)}   
 
     </div>
   );
